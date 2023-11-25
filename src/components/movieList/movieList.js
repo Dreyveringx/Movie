@@ -88,7 +88,7 @@ const MovieList = () => {
                     <Cards movie={movie} key={movie.id} />
                 ))}
             </div>
-            <button onClick={() => setCurrentPage(prevPage => prevPage + 1)}>Cargar Más</button>
+                <button  onClick={() => setCurrentPage(prevPage => prevPage + 1)}>Cargar Más</button>
         </div>
     );
 };
