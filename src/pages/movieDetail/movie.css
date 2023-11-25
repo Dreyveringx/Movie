@@ -144,7 +144,7 @@
     justify-content: center;
 }
 
-* Estilos para tablet */
+/* Estilos para tablet */
 @media (max-width: 768px) {
     .movie__backdrop {
         height: 400px;
