@@ -7,27 +7,35 @@ import Filter from "../filter/Filter";
 const MovieList = () => {
     const [movieList, setMovieList] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(1); // Estado para el número de página
     const { type } = useParams();
 
-    useEffect(() => {
-        getData();
-    }, [type]);
-
     const getData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=es-ES`)
+        fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=es-ES&page=${currentPage}`)
             .then(res => res.json())
-            .then(data => setMovieList(data.results))
+            .then(data => {
+                // Combina los resultados de la nueva página con la lista existente
+                setMovieList(prevList => [...prevList, ...data.results]);
+            })
             .catch(error => console.error("Error fetching movies:", error));
     };
 
+    useEffect(() => {
+        setMovieList([]); // Limpia la lista para cargar nuevos datos
+        setCurrentPage(1); // Reinicia la página a 1 al cambiar el tipo
+    }, [type]);
+
+    useEffect(() => {
+        getData();
+    }, [type, currentPage]);
+
     const delayedSearch = (value) => {
-        // Simular retraso de 500ms antes de realizar la búsqueda
         setTimeout(() => {
             fetch(`https://api.themoviedb.org/3/search/movie?api_key=4e44d9029b1270a757cddc766a1bcb63&query=${value}`)
                 .then(res => res.json())
                 .then(data => setMovieList(data.results))
                 .catch(error => console.error("Error fetching search results:", error));
-        }, 500); // Tiempo de espera de 500ms
+        }, 500);
     };
 
     const handleSearchOnChange = (e) => {
@@ -54,12 +62,12 @@ const MovieList = () => {
     
         console.log("Filtrar por Año:", selectedYear);
     };
+    
 
 
 
     return (
         <div className="movie__list">
-            
             <h2 className="list__title">{(type ? type : "POPULAR").toUpperCase()}</h2>
             <div className="search__container">
                 <div className="filter__buttons">
@@ -72,7 +80,7 @@ const MovieList = () => {
                     placeholder="Buscar películas..."
                 />
                 <div className="filter__buttons">
-                    <Filter setFilter={handleYearFilter} filterType="year" />
+                <Filter setFilter={handleYearFilter} filterType="year" />
                 </div>
             </div>
             <div className="list__cards">
@@ -80,8 +88,8 @@ const MovieList = () => {
                     <Cards movie={movie} key={movie.id} />
                 ))}
             </div>
+            <button onClick={() => setCurrentPage(prevPage => prevPage + 1)}>Cargar Más</button>
         </div>
-
     );
 };
 

@@ -17,6 +17,8 @@ const Movie = () => {
         .then(data => setMovie(data))
     }
 
+    
+
     return (
         <div className="movie">
             <div className="movie__intro">

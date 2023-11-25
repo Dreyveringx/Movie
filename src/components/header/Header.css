@@ -1,9 +1,14 @@
 .header {
-    margin: 0 2.5rem;
-    padding: .5rem 0;
     align-items: center;
     display: flex;
     justify-content:space-between;
+    position: fixed;
+    z-index: 100;
+    background-color: black;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .headerLeft, .headerRight {
@@ -28,9 +33,6 @@ a > span:hover {
     cursor: pointer;
 }
 
-.user__avatar {
-    font-size: 2rem;
-}
 
 @media (max-width: 768px) {
     .header {
