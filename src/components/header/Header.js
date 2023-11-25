@@ -10,8 +10,8 @@ const Header = () => {
             <div className="headerLeft">
                 <Link to="/"><img className="header__icon" src={Logo} /></Link>
                 <Link to="/movies/popular" style={{textDecoration: "none"}}><span>Popular</span></Link>
-                <Link to="/movies/top_rated" style={{textDecoration: "none"}}><span>Top Rated</span></Link>
-                <Link to="/movies/upcoming" style={{textDecoration: "none"}}><span>Upcoming</span></Link>
+                <Link to="/movies/top_rated" style={{textDecoration: "none"}}><span>Top</span></Link>
+                <Link to="/movies/upcoming" style={{textDecoration: "none"}}><span>Proximos</span></Link>
             </div>
         </div>
     )
