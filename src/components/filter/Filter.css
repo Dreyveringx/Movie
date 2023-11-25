@@ -17,3 +17,25 @@
     color: #fff;
     padding: 5px 10px;
 }
+
+/* Estilos para tablet */
+@media (max-width: 768px) {
+    .filter {
+        font-size: 1.2rem;
+        min-width: 100px;
+        height: 35px;
+        padding: 4px 8px;
+        margin: 0.5rem;
+    }
+}
+
+/* Estilos para celular */
+@media (max-width: 480px) {
+    .filter {
+        font-size: 1rem;
+        min-width: 80px;
+        height: 30px;
+        padding: 3px 6px;
+        margin: 0.3rem;
+    }
+}

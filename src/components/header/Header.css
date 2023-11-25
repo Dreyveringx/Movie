@@ -32,3 +32,42 @@ a > span:hover {
     font-size: 2rem;
 }
 
+@media (max-width: 768px) {
+    .header {
+        margin: 0 1rem;
+        padding: .5rem 0;
+    }
+
+    a > span {
+        font-size: 1rem;
+    }
+
+    .header__icon {
+        width: 60px;
+    }
+
+    .user__avatar {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para celular */
+@media (max-width: 480px) {
+    .header {
+        margin: 0 .5rem;
+        padding: .3rem 0;
+    }
+
+    a > span {
+        margin: 0 15px;
+        font-size: 0.8rem;
+    }
+
+    .header__icon {
+        width: 40px;
+    }
+
+    .user__avatar {
+        font-size: 1.2rem;
+    }
+}

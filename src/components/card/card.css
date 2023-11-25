@@ -60,3 +60,46 @@
     font-size: .75rem;
     margin-bottom: 0.25rem;
 }
+
+media (max-width: 768px) {
+    .cards {
+        min-width: 150px;
+        height: 250px;
+        margin: 0.1rem;
+    }
+
+    .cards__img {
+        height: 250px;
+    }
+
+    .card__title {
+        font-size: 0.9rem;
+    }
+
+    .card__runtime,
+    .card__description {
+        font-size: 0.7rem;
+    }
+}
+
+/* Estilos para celular */
+@media (max-width: 480px) {
+    .cards {
+        min-width: 120px;
+        height: 200px;
+        margin: 0.08rem;
+    }
+
+    .cards__img {
+        height: 200px;
+    }
+
+    .card__title {
+        font-size: 0.8rem;
+    }
+
+    .card__runtime,
+    .card__description {
+        font-size: 0.6rem;
+    }
+}

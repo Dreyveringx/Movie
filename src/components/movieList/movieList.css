@@ -56,3 +56,50 @@ button:hover, {
     border: 2px solid #212529;
     background: #212529;
   }
+
+  /* Estilos para tablet */
+@media (max-width: 768px) {
+  .movie__list {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .list__title {
+      font-size: 1.5rem;
+      margin: 1.5rem;
+  }
+
+  .search__container {
+      margin: 1.5rem;
+  }
+
+  button,
+  .search {
+      min-width: 100px;
+      height: 35px;
+      border-radius: 15px; /* Ajustar a 15px para ambos botones */
+  }
+}
+
+/* Estilos para celular */
+@media (max-width: 480px) {
+  .movie__list {
+      padding: 0 1rem 1rem 1rem;
+  }
+
+  .list__title {
+      font-size: 1.25rem;
+      margin: 1rem;
+  }
+
+  .search__container {
+      margin: 1rem;
+  }
+
+  button,
+  .search {
+      min-width: 80px;
+      height: 30px;
+      font-size: 0.9rem;
+      border-radius: 10px; /* Ajustar a 10px para ambos botones */
+  }
+}
