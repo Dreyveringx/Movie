@@ -16,7 +16,7 @@ margin:  2.5rem;
 .search__container {
     display: flex;
     justify-content: center;
-    margin: 2.5rem;
+    margin: 5.5rem;
     align-items: center;
 }
 
@@ -42,13 +42,13 @@ button:hover, {
 
 .search {
     margin: 0 1rem;
-    min-width: 130px;
+    min-width: 500px;
     height: 40px;
     color: #fff;
     padding: 5px 10px;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 18px;
+    cursor: unset;
     position: relative;
     display: inline-block;
     outline: none;
@@ -97,8 +97,8 @@ button:hover, {
 
   button,
   .search {
-      min-width: 80px;
-      height: 30px;
+      min-width: 100px;
+      height: 20px;
       font-size: 0.9rem;
       border-radius: 10px; /* Ajustar a 10px para ambos botones */
   }

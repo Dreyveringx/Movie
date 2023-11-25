@@ -185,23 +185,41 @@
     }
 }
 
-/* Estilos para celular */
 @media (max-width: 480px) {
+    .movie__intro {
+        display: none;
+    }
+
     .movie__backdrop {
         height: 300px;
     }
 
     .movie__detail {
-        bottom: 100px;
+        bottom: 0; 
     }
 
     .movie__poster {
         width: 200px;
+        display: block;
+        margin-left: auto; 
+        margin-right: auto; 
     }
 
     .movie__name {
         font-size: 2rem;
     }
+
+    .movie__genres {
+        margin: 1rem ;
+    }
+    
+    .movie__genre {
+        columns: initial; 
+        display: inline-block; 
+        margin: 0.5rem; 
+        padding: 0.5rem; 
+    }
+    
 
     .synopsisText {
         font-size: 1rem;
@@ -213,8 +231,8 @@
     }
 
     .movie__links {
-        bottom: 50px;
-        width: 90%;
+        margin : 13rem 0rem 3rem 0rem;
+        width: 50%;
     }
 
     .movie__production {
@@ -225,5 +243,16 @@
     .movie__productionComapany {
         width: 120px;
         margin: 1rem;
+    }
+
+    .movie__detail {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .movie__detailLeft,
+    .movie__detailRight {
+        width: 100%; 
+        margin-bottom: 20px; 
     }
 }

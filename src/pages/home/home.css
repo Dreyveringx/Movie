@@ -79,7 +79,7 @@
 /* Estilos para celular */
 @media (max-width: 480px) {
     .posterImage {
-        height: 300px;
+        height: 150px;
     }
 
     .posterImage__overlay {
@@ -87,7 +87,8 @@
     }
 
     .posterImage__title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
     }
 
     .posterImage__runtime {

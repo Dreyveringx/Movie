@@ -8,6 +8,7 @@ import MovieList from "../../components/movieList/movieList";
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
+    const [isTablet, setIsTablet] = useState(window.innerWidth >= 480 && window.innerWidth <= 1024);
 
     useEffect(() => {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=es-ES")
@@ -16,6 +17,7 @@ const Home = () => {
 
         const handleResize = () => {
             setIsMobile(window.innerWidth < 480);
+            setIsTablet(window.innerWidth >= 480 && window.innerWidth <= 1024);
         };
 
         window.addEventListener('resize', handleResize);
@@ -43,14 +45,16 @@ const Home = () => {
                                 </div>
                                 <div className="posterImage__overlay">
                                     <div className="posterImage__title">{movie ? movie.original_title : ""}</div>
-                                    <div className="posterImage__runtime">
-                                        {movie ? movie.release_date : ""}
-                                        <span className="posterImage__rating">
-                                            {movie ? movie.vote_average : ""}
-                                            <i className="fas fa-star" />{" "}
-                                        </span>
-                                    </div>
-                                    {!isMobile && (
+                                    {(!isMobile && !isTablet) ? (
+                                        <div className="posterImage__runtime">
+                                            {movie ? movie.release_date : ""}
+                                            <span className="posterImage__rating">
+                                                {movie ? movie.vote_average : ""}
+                                                <i className="fas fa-star" />{" "}
+                                            </span>
+                                        </div>
+                                    ) : null}
+                                    {(!isMobile && !isTablet) && (
                                         <div className="posterImage__description">{movie ? movie.overview : ""}</div>
                                     )}
                                 </div>
