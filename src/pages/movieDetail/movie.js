@@ -53,7 +53,7 @@ const Movie = () => {
                         </div>
                     </div>
                     <div className="movie__detailRightBottom">
-                        <div className="synopsisText">Synopsis</div>
+                        <div className="synopsisText">Sinopsis</div>
                         <div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
                     </div>
                     
@@ -64,7 +64,7 @@ const Movie = () => {
                     currentMovieDetail && currentMovieDetail.imdb_id && <a href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">Trailer<i className="newTab fas fa-external-link-alt"></i></span></p></a>
                 }
             </div>
-            <div className="movie__heading">Production companies</div>
+            <div className="movie__heading">Compañias de Produccón</div>
             <div className="movie__production">
                 {
                     currentMovieDetail && currentMovieDetail.production_companies && currentMovieDetail.production_companies.map(company => (
