@@ -9,9 +9,11 @@ const Filter = ({ setFilter, filterType }) => {
           <option>Género</option>
           <option value="">All</option>
           <option value="28">Acción</option>
+          <option value="12">Aventura</option>
+          <option value="16">Animación</option>
           <option value="35">Comedia</option>
           <option value="80">Crimen</option>
-          <option value="99">Documentales</option>
+          <option value="99">Documental</option>
           <option value="18">Drama</option>
           <option value="10751">Familia</option>
           <option value="14">Fantasia</option>
